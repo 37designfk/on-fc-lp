@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+const B = import.meta.env.BASE_URL.replace(/\/$/, '')
 const L = '#line'
 const CTA_ICON = `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>`
 ---
@@ -9,7 +10,7 @@ const CTA_ICON = `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBo
 <section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
   <!-- 背景: 画像 + 強めのオーバーレイ -->
   <div class="absolute inset-0">
-    <img src="/images/yomogi-real.jpg" alt="" class="w-full h-full object-cover object-[65%_center]" />
+    <img src={`${B}/images/yomogi-real.jpg`} alt="" class="w-full h-full object-cover object-[65%_center]" />
     <div class="absolute inset-0 bg-gradient-to-b from-[#2c1810]/50 via-[#2c1810]/40 to-[#2c1810]/80"></div>
   </div>
 
@@ -120,7 +121,7 @@ const CTA_ICON = `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBo
       <!-- 仕組み01 -->
       <div class="md:flex md:gap-8 md:items-center">
         <div class="md:w-2/5 mb-5 md:mb-0">
-          <img src="/images/yomogi-person.jpg" alt="よもぎ蒸し施術" class="rounded-xl w-full aspect-[4/3] object-cover" />
+          <img src={`${B}/images/yomogi-person.jpg`} alt="よもぎ蒸し施術" class="rounded-xl w-full aspect-[4/3] object-cover" />
         </div>
         <div class="md:w-3/5">
           <span class="tag bg-[var(--accent-100)] text-[var(--accent-700)] mb-3">仕組み 01</span>
@@ -132,7 +133,7 @@ const CTA_ICON = `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBo
       <!-- 仕組み02 -->
       <div class="md:flex md:flex-row-reverse md:gap-8 md:items-center">
         <div class="md:w-2/5 mb-5 md:mb-0">
-          <img src="/images/salon-real.jpg" alt="サロン内装" class="rounded-xl w-full aspect-[4/3] object-cover" />
+          <img src={`${B}/images/salon-real.jpg`} alt="サロン内装" class="rounded-xl w-full aspect-[4/3] object-cover" />
         </div>
         <div class="md:w-3/5">
           <span class="tag bg-[var(--accent-100)] text-[var(--accent-700)] mb-3">仕組み 02</span>
@@ -144,7 +145,7 @@ const CTA_ICON = `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBo
       <!-- 仕組み03 -->
       <div class="md:flex md:gap-8 md:items-center">
         <div class="md:w-2/5 mb-5 md:mb-0">
-          <img src="/images/hero-bg.avif" alt="よもぎ蒸し" class="rounded-xl w-full aspect-[4/3] object-cover" />
+          <img src={`${B}/images/hero-bg.avif`} alt="よもぎ蒸し" class="rounded-xl w-full aspect-[4/3] object-cover" />
         </div>
         <div class="md:w-3/5">
           <span class="tag bg-[var(--accent-100)] text-[var(--accent-700)] mb-3">仕組み 03</span>
@@ -390,8 +391,8 @@ const CTA_ICON = `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBo
 
     <div class="space-y-4">
       {[
-        { img: '/images/owner-testimonial.png', title: '開業2ヶ月目で黒字化', body: '「固定費が抑えられるビジネスモデルなので、想定より早く結果が出ました。技術がなくても始められて、数字が作りやすく、長く続けやすい。未経験でも仕組みとサポートがあれば十分に戦えます。」' },
-        { img: '/images/owner-testimonial-2.png', title: 'リピート率65% クレーム対応ほぼゼロ', body: '「ここに来るのが習慣になった、他のケアに戻れないと言っていただけることが増えています。施術に高度な技術が不要で、施術ミスが起きにくい。新人でもすぐ現場に立てます。」' },
+        { img: `${B}/images/owner-testimonial.png`, title: '開業2ヶ月目で黒字化', body: '「固定費が抑えられるビジネスモデルなので、想定より早く結果が出ました。技術がなくても始められて、数字が作りやすく、長く続けやすい。未経験でも仕組みとサポートがあれば十分に戦えます。」' },
+        { img: `${B}/images/owner-testimonial-2.png`, title: 'リピート率65% クレーム対応ほぼゼロ', body: '「ここに来るのが習慣になった、他のケアに戻れないと言っていただけることが増えています。施術に高度な技術が不要で、施術ミスが起きにくい。新人でもすぐ現場に立てます。」' },
       ].map((v) => (
         <div class="card p-5 md:p-6">
           <div class="flex items-center gap-4 mb-4">
